@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const NpmInstallPlugin = require('npm-install-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -88,10 +87,7 @@ if(TARGET === 'start' || !TARGET) {
 			]
 		},
 		plugins: [
-			new webpack.HotModuleReplacementPlugin(),
-			new NpmInstallPlugin({
-				save: true // --save
-			})
+			new webpack.HotModuleReplacementPlugin()
 		]
 	});
 }
