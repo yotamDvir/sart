@@ -15,7 +15,7 @@ const Feedback = ({marks, all, above, below}) => {
 						const correct = (haveMarked && shouldHave) || (!haveMarked && !shouldHave);
 						return (
 							<li key={ind} style={{color: correct ? 'green' : 'red'}}>
-								{correct ? 'צדקת ' : 'טעית '}
+								{correct ? 'צדקת ' : 'שגית '}
 								כאשר
 								{' '}
 								{!haveMarked && 'לא'}

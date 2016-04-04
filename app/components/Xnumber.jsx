@@ -14,7 +14,7 @@ const Xnumber = ({number, size, X = false, indicateIncorrect}) => (
 				bottom: 0, left: '40%',
 				width: '20%',
 				textAlign: 'center',
-			}}>Incorrect</span>
+			}}>שגיאה</span>
 	</div>
 );
 
