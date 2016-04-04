@@ -11,3 +11,16 @@ export const
 		{content: '9', shouldBeMarked: false},
 	];
 
+export const
+	DIRECTIONS	 	 = 'phase:directions',
+	SAMPLE 			 = 'phase:sample',
+	FEEDBACK	 	 = 'phase:feedback',
+	TEST	 		 = 'phase:test',
+	CONCLUSION 		 = 'phase:conclusion',
+	PHASES_ORDERED	 = [
+		DIRECTIONS,
+		SAMPLE,
+		FEEDBACK,
+		TEST,
+		CONCLUSION,
+	];
