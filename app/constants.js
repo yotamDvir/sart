@@ -1,10 +1,10 @@
 export const
 	MARK_KEY 			= 32,
 	PHASE_KEY 			= 32,
-	SHOW_INT 			= 600,
-	HIDE_INT 			= 600,
-	ITERATIONS 			= 6,
-	ITERATIONS_INTRO 	= 2;
+	SHOW_INT 			= 700,
+	HIDE_INT 			= 300,
+	ITERATIONS 			= 90,
+	ITERATIONS_INTRO 	= 12;
 
 export const
 	MARKABLES = [
