@@ -22,12 +22,18 @@ const phaser = function (phase) {
 	ticker.start((SHOW_INT+HIDE_INT)*iter);
 };
 
-const marker = function (phase) {
+const marker = function () {
 	const currentMarkable = store.getState().xnumber.int;
 	store.dispatch(mark(currentMarkable));
 };
 
-const onKeyUp = function (e) {
+let hasReleasedKey = true;
+
+const onKeyboard = function (e) {
+	if (!hasReleasedKey) {
+		return undefined;
+	}
+	hasReleasedKey = false;
 	const key = e.which;
 	if (key !== PHASE_KEY && key !== MARK_KEY) {
 		return undefined;
@@ -38,8 +44,9 @@ const onKeyUp = function (e) {
 		phaser(phase);
 	}
 	if (key === MARK_KEY && [SAMPLE, TEST].indexOf(phase) >= 0) {
-		marker(phase);
+		marker();
 	}
 };
 
-document.body.addEventListener('keyup', onKeyUp);
+document.body.addEventListener('keydown', onKeyboard);
+document.body.addEventListener('keyup', function () {hasReleasedKey = true;});
