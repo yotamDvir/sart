@@ -16,7 +16,7 @@ const ticker = new Tock({
 });
 
 const lapToShouldShow = (lap) => {
-	const shouldShow = (lap-1) % (SHOW_INT+HIDE_INT) > SHOW_INT;
+	const shouldShow = (lap-1) % (SHOW_INT+HIDE_INT) > HIDE_INT;
 	return shouldShow;
 };
 
