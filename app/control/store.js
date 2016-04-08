@@ -1,4 +1,18 @@
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import combinedReducer from './reducers';
 
-export default createStore(combinedReducer);
+/**
+ * Logs all actions and states after they are dispatched.
+ */
+const logger = store => next => action => {
+	console.group(action.type)
+	console.info('dispatching', action)
+	let result = next(action)
+	console.log('next state', store.getState())
+	console.groupEnd(action.type)
+	return result
+};
+
+export default createStore(combinedReducer, applyMiddleware(
+	// logger
+));
