@@ -1,8 +1,8 @@
 import React, {PropTypes} from 'react';
 
-const Report = ({name, report, children}) => {
-	console.log(...report);
-	const data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(report));
+const Report = ({id, report, children}) => {
+	const namedReport = {id, report};
+	const data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(namedReport));
 	return (
 		<div>
 			<p>
@@ -10,7 +10,7 @@ const Report = ({name, report, children}) => {
 			</p>
 			<a
 				href={'data:' + data}
-				download={name || 'data' + '.json'}
+				download={id || 'data' + '.json'}
 				style={{color: 'cyan'}}
 				>
 				הורדת קובץ סיכום המבחן

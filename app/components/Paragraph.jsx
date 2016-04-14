@@ -1,17 +1,24 @@
 import React, {PropTypes} from 'react';
-import {DIRECTIONS, FEEDBACK, CONCLUSION} from '../constants';
+import {
+	IDENTIFY,
+	DIRECTIONS,
+	FEEDBACK,
+	CONCLUSION,
+} from '../constants';
 import Report from './Report';
 import Feedback from './Feedback';
+import Id from './Id';
 import texts from '../texts'
 
 const linesToHTML = lines => lines.map(
 	(line, key) => <span key={key}>{line}<br/></span>
 );
 
-const Paragraph = ({phase, marks, all}) => (
+const Paragraph = ({phase, marks, all, id}) => (
 	<div className="paragraph">
 		{phase === CONCLUSION &&
 			<Report
+				id={id}
 				report={all.map(
 					(markable, ind) => ({
 						content: markable.content,
@@ -23,8 +30,17 @@ const Paragraph = ({phase, marks, all}) => (
 				{linesToHTML(texts.conclusion)}
 			</Report>
 		}
+		{phase === IDENTIFY &&
+			<Id
+				value={id}
+				>
+				{linesToHTML(texts.identify)}
+			</Id>
+		}
 		{phase === DIRECTIONS &&
-			<p>{linesToHTML(texts.directions)}</p>
+			<div>
+				<p>{linesToHTML(texts.directions)}</p>
+			</div>
 		}
 		{phase === FEEDBACK &&
 			<Feedback
@@ -38,7 +54,7 @@ const Paragraph = ({phase, marks, all}) => (
 );
 
 Paragraph.propTypes = {
-	phase: PropTypes.oneOf([DIRECTIONS, FEEDBACK, CONCLUSION]),
+	phase: PropTypes.oneOf([IDENTIFY, DIRECTIONS, FEEDBACK, CONCLUSION]),
 	marks: PropTypes.arrayOf(PropTypes.oneOf([true, false, null])),
 	all: PropTypes.arrayOf(PropTypes.shape({
 		content: PropTypes.string.isRequired,

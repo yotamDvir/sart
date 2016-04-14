@@ -4,7 +4,7 @@ import {SAMPLE, TEST} from '../constants';
 import Xnumber from './Xnumber';
 import Paragraph from './Paragraph';
 
-const App = ({xnumber, phase}) => (
+const App = ({xnumber, phase, id}) => (
 	<div>
 		{[SAMPLE, TEST].indexOf(phase) >= 0 &&
 			<Xnumber
@@ -17,6 +17,7 @@ const App = ({xnumber, phase}) => (
 		{[SAMPLE, TEST].indexOf(phase) < 0 &&
 			<Paragraph
 				phase={phase}
+				id={id}
 				marks={xnumber.marks}
 				all={xnumber.all}
 				/>

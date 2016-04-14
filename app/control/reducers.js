@@ -69,7 +69,18 @@ const phase = (state = PHASES_ORDERED[0], action) => {
 	};
 };
 
+const id = (state = '', action) => {
+	switch (action.type) {
+		case acts.ID:
+			return action.payload;
+			break;
+		default:
+			return state;
+	}
+}
+
 export default combineReducers({
 	xnumber,
 	phase,
+	id,
 });

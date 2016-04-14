@@ -1,6 +1,7 @@
 export const
 	MARK_KEY 			= 32,
 	PHASE_KEY 			= 32,
+	ENTER_KEY 			= 13,
 	SHOW_INT 			= 700,
 	HIDE_INT 			= 300,
 	ITERATIONS 			= 90,
@@ -20,12 +21,14 @@ export const
 	];
 
 export const
+	IDENTIFY	 	 = 'phase:identify',
 	DIRECTIONS	 	 = 'phase:directions',
 	SAMPLE 			 = 'phase:sample',
 	FEEDBACK	 	 = 'phase:feedback',
 	TEST	 		 = 'phase:test',
 	CONCLUSION 		 = 'phase:conclusion',
 	PHASES_ORDERED	 = [
+		IDENTIFY,
 		DIRECTIONS,
 		SAMPLE,
 		FEEDBACK,

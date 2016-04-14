@@ -1,10 +1,16 @@
 const acts = {
+	ID 		: 'action:edit-id',
 	SHOW 	: 'action:show',
 	HIDE 	: 'action:hide',
 	MARK 	: 'action:mark',
 	CLEAR 	: 'action:clear',
 	ADVANCE : 'action:advance',
 };
+
+export const id = (value) => ({
+	type: acts.ID,
+	payload: value,
+});
 
 export const show = (markable) => ({
 	type: acts.SHOW,
