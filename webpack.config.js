@@ -42,7 +42,9 @@ const common = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'SART'
+			title: 'SART',
+			template: 'index.ejs',
+			inject: 'body'
 		})
 	]
 };

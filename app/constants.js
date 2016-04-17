@@ -35,3 +35,9 @@ export const
 		TEST,
 		CONCLUSION,
 	];
+
+export const
+	DATA	= 'storage:data',
+	SUCCESS	= 'storage:success',
+	ERROR	= 'storage:error',
+	EMAIL	= 'exp.psych.2@gmail.com';

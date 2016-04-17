@@ -9,10 +9,7 @@ import Report from './Report';
 import Feedback from './Feedback';
 import Id from './Id';
 import texts from '../texts'
-
-const linesToHTML = lines => lines.map(
-	(line, key) => <span key={key}>{line}<br/></span>
-);
+import linesToHTML from '../helpers/lines-to-html';
 
 const Paragraph = ({phase, marks, all, id}) => (
 	<div className="paragraph">
