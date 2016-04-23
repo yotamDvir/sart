@@ -11,11 +11,14 @@ import ticker from './ticker';
 
 const identify = function () {
 	const id = store.getState().id;
+	if (id.length < 5) {
+		return;
+	}
 	const isIdCorrect = confirm(
 		'ת.ז. שהכנסת הינה '
 		+ id
 		+ '.\n'
-		+ '.אנא אשר/י נכונותה'
+		+ 'אנא אשר/י נכונותה.'
 	);
 	if (!isIdCorrect) {
 		return;
