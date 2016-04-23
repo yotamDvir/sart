@@ -15,7 +15,9 @@ const Id = ({value, children}) => (
 	</div>
 );
 
-Id.handleChange = e => {store.dispatch(id(e.target.value.substr(0, 9)));}
+Id.handleChange = e => {store.dispatch(id(
+	e.target.value.substr(0, 5).replace(/[^0-9]/, '')
+));}
 
 Id.propTypes = {
 	value: PropTypes.string.isRequired,
